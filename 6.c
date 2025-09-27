@@ -19,6 +19,8 @@ int main() {
             perror("fgets failed");
             continue;
         }
+        //If the new line char aint removed it will be read alongside with any other input
+        command[strcspn(command, "\n")] = '\0';
 
         //Exit shell if user types exi t
         if (strcmp(command, "exit") == 0) {
